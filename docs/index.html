@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Breu Software LLC — Heritage Game Studio</title>
   <meta name="description" content="Breu Software LLC is the heritage game studio creating Farmer Bob’s Solitaire, Space Barons, and Fishing With Duane." />
-  <meta name="theme-color" content="#080b13" />
+  <meta name="theme-color" content="#002b36" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Breu Software LLC — Heritage Game Studio" />
   <meta property="og:description" content="Three distinct games. One heritage game studio." />
   <style>
     :root {
-      --bg: #080b13;
-      --bg-soft: #0f1420;
-      --surface: rgba(255, 255, 255, 0.045);
-      --line: rgba(255, 255, 255, 0.12);
-      --ink: #f3f0e8;
-      --muted: #a9afbd;
-      --farm: #e8aa5b;
-      --farm-deep: #4f321c;
-      --space: #8d96ff;
-      --space-deep: #24275c;
-      --lake: #89c5c7;
-      --lake-deep: #123e4a;
+      --bg: #002b36;
+      --bg-soft: #073642;
+      --surface: rgba(147, 161, 161, 0.08);
+      --line: rgba(147, 161, 161, 0.22);
+      --ink: #eee8d5;
+      --muted: #93a1a1;
+      --farm: #b58900;
+      --farm-deep: #073642;
+      --space: #268bd2;
+      --space-deep: #073642;
+      --lake: #2aa198;
+      --lake-deep: #073642;
       --max: 1180px;
       --gutter: clamp(22px, 5vw, 72px);
     }
@@ -34,8 +34,8 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at 76% -10%, rgba(95, 102, 205, 0.18), transparent 34rem),
-        radial-gradient(circle at -10% 42%, rgba(183, 111, 43, 0.10), transparent 32rem),
+        radial-gradient(circle at 76% -10%, rgba(38, 139, 210, 0.16), transparent 34rem),
+        radial-gradient(circle at -10% 42%, rgba(181, 137, 0, 0.10), transparent 32rem),
         var(--bg);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -225,7 +225,7 @@
     }
 
     .orbit::before { inset: 13%; }
-    .orbit::after { inset: 31%; background: rgba(141, 150, 255, 0.05); }
+    .orbit::after { inset: 31%; background: rgba(38, 139, 210, 0.08); }
 
     .orbit-axis {
       position: absolute;
@@ -317,24 +317,25 @@
 
     .game-farm .game-visual {
       background:
-        radial-gradient(circle at 50% 48%, rgba(232, 170, 91, 0.23), transparent 32%),
-        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 42px),
+        radial-gradient(circle at 50% 48%, rgba(181, 137, 0, 0.28), transparent 32%),
+        repeating-linear-gradient(0deg, rgba(147, 161, 161, 0.06) 0 1px, transparent 1px 42px),
         var(--farm-deep);
     }
 
     .game-space .game-visual {
       background:
-        radial-gradient(circle at 50% 48%, rgba(141, 150, 255, 0.22), transparent 34%),
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        radial-gradient(circle at 50% 48%, rgba(38, 139, 210, 0.25), transparent 34%),
+        linear-gradient(rgba(147, 161, 161, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(147, 161, 161, 0.06) 1px, transparent 1px),
         var(--space-deep);
       background-size: auto, 42px 42px, 42px 42px, auto;
     }
 
     .game-fishing .game-visual {
       background:
-        radial-gradient(circle at 50% 44%, rgba(255, 255, 255, 0.82), transparent 36%),
-        linear-gradient(150deg, #d9e9e7 0%, #f2dfbd 100%);
+        radial-gradient(circle at 50% 44%, rgba(42, 161, 152, 0.26), transparent 36%),
+        repeating-linear-gradient(0deg, rgba(147, 161, 161, 0.055) 0 1px, transparent 1px 42px),
+        var(--lake-deep);
     }
 
     .game-visual::after {
@@ -342,7 +343,7 @@
       position: absolute;
       inset: 28px;
       z-index: -1;
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(147, 161, 161, 0.24);
       border-radius: 50%;
     }
 
@@ -358,21 +359,21 @@
 
     .game-fishing .game-visual img {
       width: min(78%, 470px);
-      filter: drop-shadow(0 26px 40px rgba(18, 62, 74, 0.24));
+      filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.42));
     }
 
     .game-fishing .game-visual::after {
-      border-color: rgba(18, 62, 74, 0.18);
+      border-color: rgba(42, 161, 152, 0.28);
     }
 
-    .game-fishing .game-number { color: rgba(18, 62, 74, 0.68); }
+    .game-fishing .game-number { color: rgba(238, 232, 213, 0.62); }
 
     .game-number {
       position: absolute;
       top: 38px;
       left: 42px;
       margin: 0;
-      color: rgba(255, 255, 255, 0.58);
+      color: rgba(238, 232, 213, 0.62);
       font-size: 12px;
       font-weight: 750;
       letter-spacing: 0.14em;
@@ -417,12 +418,12 @@
 
     .project-classification dt {
       border-right: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--surface);
       color: var(--muted);
     }
 
     .classification-state dd { color: var(--space); }
-    .classification-status dd { color: #83d7ad; }
+    .classification-status dd { color: #859900; }
 
     .game-content h3 {
       max-width: 11ch;
@@ -453,7 +454,7 @@
       padding: 7px 12px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      color: #cfd3dd;
+      color: var(--ink);
       font-size: 12px;
       font-weight: 650;
       letter-spacing: 0.04em;
@@ -638,7 +639,7 @@
           <img src="assets/farmer-bobs-medallion.png" alt="Farmer Bob’s Solitaire medallion" />
         </figure>
         <figure class="art-fishing">
-          <img src="assets/fishing-with-duane-medallion.png" alt="Fishing With Duane medallion" />
+          <img src="assets/fishing-with-duane-medallion-solarized.png" alt="Fishing With Duane medallion" />
         </figure>
         <figure class="art-space">
           <img src="assets/space-barons-rocket.png" alt="Space Barons rocket ship" />
@@ -700,7 +701,7 @@
       <article class="game game-fishing">
         <div class="game-visual">
           <p class="game-number">PROJECT 03</p>
-          <img src="assets/fishing-with-duane-medallion.png" alt="Fishing With Duane medallion" loading="lazy" />
+          <img src="assets/fishing-with-duane-medallion-solarized.png" alt="Fishing With Duane medallion" loading="lazy" />
         </div>
         <div class="game-content">
           <p class="game-name">Fishing With Duane</p>
