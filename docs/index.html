@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Breu Software LLC — Heritage Game Studio</title>
-  <meta name="description" content="Breu Software LLC is the heritage game studio creating Farmer Bob’s Solitaire and Space Barons." />
+  <meta name="description" content="Breu Software LLC is the heritage game studio creating Farmer Bob’s Solitaire, Space Barons, and Fishing With Duane." />
   <meta name="theme-color" content="#080b13" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Breu Software LLC — Heritage Game Studio" />
-  <meta property="og:description" content="Two very different games. One heritage game studio." />
+  <meta property="og:description" content="Three distinct games. One heritage game studio." />
   <style>
     :root {
       --bg: #080b13;
@@ -21,6 +21,8 @@
       --farm-deep: #4f321c;
       --space: #8d96ff;
       --space-deep: #24275c;
+      --lake: #89c5c7;
+      --lake-deep: #123e4a;
       --max: 1180px;
       --gutter: clamp(22px, 5vw, 72px);
     }
@@ -122,7 +124,7 @@
 
     .eyebrow,
     .section-label,
-    .game-state {
+    .game-name {
       margin: 0;
       color: var(--space);
       font-size: 12px;
@@ -234,7 +236,8 @@
     }
 
     .art-farm,
-    .art-space {
+    .art-space,
+    .art-fishing {
       position: absolute;
       z-index: 2;
       margin: 0;
@@ -243,16 +246,31 @@
 
     .art-farm {
       width: min(26vw, 320px);
-      left: 2%;
-      top: 7%;
+      left: -2%;
+      top: 15%;
+      z-index: 3;
       transform: rotate(-4deg);
     }
 
     .art-space {
       width: min(9vw, 112px);
-      right: 11%;
-      bottom: 7%;
+      right: 6%;
+      bottom: 5%;
+      z-index: 4;
       transform: rotate(9deg);
+    }
+
+    .art-fishing {
+      width: min(20vw, 242px);
+      top: 0;
+      right: -1%;
+      transform: rotate(5deg);
+    }
+
+    .art-fishing img {
+      display: block;
+      border-radius: 50%;
+      clip-path: circle(49% at 50% 50%);
     }
 
     .games {
@@ -319,6 +337,12 @@
       background-size: auto, 42px 42px, 42px 42px, auto;
     }
 
+    .game-fishing .game-visual {
+      background:
+        radial-gradient(circle at 50% 44%, rgba(255, 255, 255, 0.82), transparent 36%),
+        linear-gradient(150deg, #d9e9e7 0%, #f2dfbd 100%);
+    }
+
     .game-visual::after {
       content: "";
       position: absolute;
@@ -337,6 +361,18 @@
       width: min(28%, 150px);
       filter: drop-shadow(0 24px 36px rgba(0, 0, 0, 0.55));
     }
+
+    .game-fishing .game-visual img {
+      width: min(78%, 470px);
+      mix-blend-mode: multiply;
+      filter: drop-shadow(0 26px 40px rgba(18, 62, 74, 0.24));
+    }
+
+    .game-fishing .game-visual::after {
+      border-color: rgba(18, 62, 74, 0.18);
+    }
+
+    .game-fishing .game-number { color: rgba(18, 62, 74, 0.68); }
 
     .game-number {
       position: absolute;
@@ -357,11 +393,47 @@
       background: var(--bg-soft);
     }
 
-    .game-farm .game-state { color: var(--farm); }
+    .game-name { margin-bottom: 18px; }
+    .game-farm .game-name { color: var(--farm); }
+    .game-fishing .game-name { color: var(--lake); }
+
+    .project-classification {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .project-classification > div {
+      display: inline-flex;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .project-classification dt,
+    .project-classification dd {
+      margin: 0;
+      padding: 7px 11px;
+      font-size: 11px;
+      font-weight: 720;
+      letter-spacing: 0.07em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .project-classification dt {
+      border-right: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+    }
+
+    .classification-state dd { color: var(--space); }
+    .classification-status dd { color: #83d7ad; }
 
     .game-content h3 {
       max-width: 11ch;
-      margin: 18px 0 24px;
+      margin: 26px 0 24px;
       font-size: clamp(42px, 5vw, 68px);
       font-weight: 710;
       letter-spacing: -0.05em;
@@ -481,8 +553,9 @@
 
       .hero-art { min-height: 520px; }
       .orbit { width: min(72vw, 500px); }
-      .art-farm { width: min(52vw, 320px); left: 14%; }
-      .art-space { width: min(18vw, 110px); right: 18%; }
+      .art-farm { width: min(52vw, 320px); left: 7%; top: 18%; }
+      .art-fishing { width: min(39vw, 238px); right: 5%; }
+      .art-space { width: min(18vw, 110px); right: 10%; }
       .game { grid-template-columns: 1fr; }
       .game-space .game-visual,
       .game-space .game-content { order: initial; }
@@ -496,6 +569,8 @@
       .hero { padding-block: 72px 88px; }
       h1 { font-size: clamp(54px, 17vw, 78px); }
       .hero-art { min-height: 420px; }
+      .art-farm { left: 1%; }
+      .art-fishing { right: 0; }
       .games-heading,
       .principles-heading {
         grid-template-columns: 1fr;
@@ -557,17 +632,20 @@
       <div>
         <p class="eyebrow">Breu Software LLC · Heritage game studio</p>
         <h1 id="hero-title">We make games with somewhere to go.</h1>
-        <p class="hero-copy">Breu Software LLC is a heritage game studio creating Farmer Bob’s Solitaire and Space Barons—two very different games, built with the same patience.</p>
+        <p class="hero-copy">Breu Software LLC is a heritage game studio creating Farmer Bob’s Solitaire, Space Barons, and Fishing With Duane—three distinct games, built with the same patience.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#games">Meet the games</a>
           <a class="button button-secondary" href="#studio">How we build</a>
         </div>
       </div>
 
-      <div class="hero-art" aria-label="Artwork from Farmer Bob’s Solitaire and Space Barons">
+      <div class="hero-art" aria-label="A montage of artwork from Farmer Bob’s Solitaire, Space Barons, and Fishing With Duane">
         <div class="orbit" aria-hidden="true"><span class="orbit-axis"></span></div>
         <figure class="art-farm">
           <img src="assets/farmer-bobs-medallion.png" alt="Farmer Bob’s Solitaire medallion" />
+        </figure>
+        <figure class="art-fishing">
+          <img src="assets/fishing-with-duane-medallion.png" alt="Fishing With Duane medallion" />
         </figure>
         <figure class="art-space">
           <img src="assets/space-barons-rocket.png" alt="Space Barons rocket ship" />
@@ -579,9 +657,9 @@
       <div class="games-heading shell">
         <div>
           <p class="section-label">In development</p>
-          <h2 id="games-title">Two worlds. No shortcuts.</h2>
+          <h2 id="games-title">Three worlds. No shortcuts.</h2>
         </div>
-        <p class="games-intro">One game finds depth in a deck of cards. The other stretches across a persistent galaxy. Both are being built to reward curiosity, attention, and the decision to play one more turn.</p>
+        <p class="games-intro">One game finds depth in a deck of cards. Another stretches across a persistent galaxy. The newest heads to the lake. All three are being built to reward curiosity, attention, and the decision to play one more turn.</p>
       </div>
 
       <article class="game game-farm">
@@ -590,7 +668,11 @@
           <img src="assets/farmer-bobs-medallion.png" alt="Farmer Bob’s Solitaire" loading="lazy" />
         </div>
         <div class="game-content">
-          <p class="game-state">Coming soon</p>
+          <p class="game-name">Farmer Bob’s Solitaire</p>
+          <dl class="project-classification" aria-label="Farmer Bob’s Solitaire classification">
+            <div class="classification-state"><dt>State</dt><dd>Design Complete</dd></div>
+            <div class="classification-status"><dt>Status</dt><dd>Publishing</dd></div>
+          </dl>
           <h3>A card table with roots.</h3>
           <p class="game-description">Farmer Bob’s Solitaire is a handcrafted solitaire game played across four rows. Build each row by suit and rank, choose a fresh hand or the Daily Deal, and try to place all 52 cards before the deck runs dry. Drag or tap cards into place, replay favorite deals, and use Hint when you need a nudge.</p>
           <ul class="game-notes" aria-label="Farmer Bob’s Solitaire qualities">
@@ -607,13 +689,38 @@
           <img src="assets/space-barons-rocket.png" alt="Space Barons rocket ship" loading="lazy" />
         </div>
         <div class="game-content">
-          <p class="game-state">In development</p>
+          <p class="game-name">Space Barons</p>
+          <dl class="project-classification" aria-label="Space Barons classification">
+            <div class="classification-state"><dt>State</dt><dd>Designing</dd></div>
+            <div class="classification-status"><dt>Status</dt><dd>Developing</dd></div>
+          </dl>
           <h3>Make a name among the stars.</h3>
           <p class="game-description">Space Barons is a persistent space strategy game set in a living galaxy. Explore connected sectors, build ships and industry, organize fleets, and decide which risks are worth taking beyond the next jump lane.</p>
           <ul class="game-notes" aria-label="Space Barons qualities">
             <li>Persistent galaxy</li>
             <li>Fleet strategy</li>
             <li>Player-shaped stories</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="game game-fishing">
+        <div class="game-visual">
+          <p class="game-number">PROJECT 03</p>
+          <img src="assets/fishing-with-duane-medallion.png" alt="Fishing With Duane medallion" loading="lazy" />
+        </div>
+        <div class="game-content">
+          <p class="game-name">Fishing With Duane</p>
+          <dl class="project-classification" aria-label="Fishing With Duane classification">
+            <div class="classification-state"><dt>State</dt><dd>Creating Spec</dd></div>
+            <div class="classification-status"><dt>Status</dt><dd>Developing</dd></div>
+          </dl>
+          <h3>The next story starts at the lake.</h3>
+          <p class="game-description">Fishing With Duane is a new game concept now entering specification. The medallion sets the tone: time on the water, memorable catches, and a character-led outdoor world. The game’s rules, progression, and final format are still being defined.</p>
+          <ul class="game-notes" aria-label="Fishing With Duane qualities">
+            <li>Fishing</li>
+            <li>Character-led</li>
+            <li>Spec in progress</li>
           </ul>
         </div>
       </article>
@@ -651,7 +758,7 @@
   <footer class="site-footer">
     <div class="footer-inner shell">
       <p class="footer-name">Breu Software LLC</p>
-      <p>Heritage game studio · Farmer Bob’s Solitaire · Space Barons</p>
+      <p>Heritage game studio · Farmer Bob’s Solitaire · Space Barons · Fishing With Duane</p>
       <p>© 2026</p>
     </div>
   </footer>
