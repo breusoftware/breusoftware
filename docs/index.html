@@ -255,30 +255,6 @@
       transform: rotate(9deg);
     }
 
-    .art-caption {
-      position: absolute;
-      z-index: 3;
-      right: 0;
-      top: 18%;
-      width: 152px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 650;
-      letter-spacing: 0.1em;
-      line-height: 1.5;
-      text-transform: uppercase;
-    }
-
-    .art-caption::before {
-      content: "";
-      display: block;
-      width: 48px;
-      height: 1px;
-      margin-bottom: 12px;
-      background: var(--space);
-    }
-
     .games {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -507,8 +483,6 @@
       .orbit { width: min(72vw, 500px); }
       .art-farm { width: min(52vw, 320px); left: 14%; }
       .art-space { width: min(18vw, 110px); right: 18%; }
-      .art-caption { right: 8%; }
-
       .game { grid-template-columns: 1fr; }
       .game-space .game-visual,
       .game-space .game-content { order: initial; }
@@ -522,8 +496,6 @@
       .hero { padding-block: 72px 88px; }
       h1 { font-size: clamp(54px, 17vw, 78px); }
       .hero-art { min-height: 420px; }
-      .art-caption { display: none; }
-
       .games-heading,
       .principles-heading {
         grid-template-columns: 1fr;
@@ -600,7 +572,6 @@
         <figure class="art-space">
           <img src="assets/space-barons-rocket.png" alt="Space Barons rocket ship" />
         </figure>
-        <p class="art-caption">From a quiet farm to the far edge of a living galaxy.</p>
       </div>
     </section>
 
