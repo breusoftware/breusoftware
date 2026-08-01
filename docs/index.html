@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Breu Software — publisher of Farmer Bob’s Solitaire</title>
-<meta name="description" content="Breu Software is a small software studio and the publisher of Farmer Bob’s Solitaire." />
+<title>Breu Software — independent games studio</title>
+<meta name="description" content="Breu Software is the independent studio behind Farmer Bob’s Solitaire and Space Barons." />
 <script src="./ds-base.js"></script>
 <style>
 /* Template scaffolding — page layout and web-scale sizing only; every color,
@@ -200,6 +200,37 @@ body {
    wrapper blends whatever is swapped in — dark grounds sink away, which is
    the treatment's intent and the swap caveat the deck documents */
 
+/* — upcoming projects — */
+.projects { padding: calc(3.5 * var(--leading)) 0 calc(3 * var(--leading)); }
+.projects-intro { max-width: var(--measure); margin-bottom: calc(1.5 * var(--leading)); }
+.projects-title { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: clamp(32px, 4vw, 52px); line-height: calc(2 * var(--leading));
+  letter-spacing: -0.015em; margin: 0; text-box: trim-both cap alphabetic; }
+.projects-sub { font-size: 15.5px; line-height: var(--leading);
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+  margin: calc(var(--leading) - 1cap) 0 0; text-box: trim-both cap alphabetic; }
+.project { display: grid; grid-template-columns: minmax(180px, 4fr) minmax(0, 8fr);
+  gap: var(--leading) clamp(32px, 6vw, 96px); align-items: center;
+  padding: calc(2 * var(--leading)) 0; }
+.project + .project { position: relative; }
+.project + .project::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-neutral-700) 48px calc(100% - 48px), transparent); }
+.project-art { height: clamp(210px, 28vw, 320px); display: flex; align-items: center; justify-content: center;
+  margin: 0; padding: var(--leading); box-sizing: border-box;
+  background: radial-gradient(circle at center,
+    color-mix(in srgb, var(--color-accent-900) 36%, transparent), transparent 68%); }
+.project-art img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
+.project-copy { max-width: 62ch; }
+.project-status { display: inline-block; font-size: 12px; line-height: var(--half);
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent);
+  margin: 0 0 var(--half); font-feature-settings: "tnum" 1; }
+.project-name { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 28px; line-height: calc(1.5 * var(--leading)); letter-spacing: -0.012em;
+  margin: 0; text-box: trim-both cap alphabetic; }
+.project-description { font-size: 15.5px; line-height: var(--leading);
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+  margin: calc(var(--leading) - 1cap) 0 0; max-width: 58ch; text-box: trim-both cap alphabetic; }
+
 /* — quote (hanging punctuation, measured for Inter) — */
 .quote { padding: calc(2.5 * var(--leading)) 0 calc(3.5 * var(--leading)); }
 .quote blockquote {
@@ -257,6 +288,8 @@ a:hover { color: var(--color-accent); }
   .split { grid-template-columns: 1fr; }
   .split-figure { order: -1; } /* the photograph leads on one column — it blends
      into the ground either way, and the title stays adjacent to its copy */
+  .project { grid-template-columns: 1fr; }
+  .project-art { height: 260px; padding: var(--half); }
 }
 
 /* Review aid: the 28px rhythm drawn as hairlines (14px half-steps fainter) —
@@ -280,7 +313,7 @@ body[data-baselines]::after {
 <body>
 <nav class="nav">
   <span class="nav-brand"><img class="brand-mark" src="assets/breu-logo.png" alt="Breu Software" /></span>
-  <a href="#game">The game</a>
+  <a href="#projects">Projects</a>
   <a href="#studio">Studio</a>
   <a href="#contact">Contact</a>
   <a class="btn btn-primary" href="mailto:hello@breusoftware.com">Email us</a>
@@ -288,10 +321,10 @@ body[data-baselines]::after {
 <div class="wrap">
 
   <section class="hero">
-    <h1 class="display"><span class="line">A small software studio.</span> <span class="line">Publisher of Farmer Bob’s Solitaire.</span></h1>
-    <p class="sub">Breu Software builds and publishes its own games. Right now that means one: Farmer Bob’s Solitaire — a calm card game set on a farm, made to be played a hand at a time.</p>
+    <h1 class="display"><span class="line">A small software studio.</span> <span class="line">Two new worlds in the works.</span></h1>
+    <p class="sub">Breu Software builds and publishes its own games. Farmer Bob’s Solitaire brings calm card play to the farm; Space Barons heads for a persistent galaxy of ships, sectors, and hard choices.</p>
     <div class="row">
-      <a class="btn btn-primary" href="#game">About the game</a>
+      <a class="btn btn-primary" href="#projects">See the projects</a>
       <a class="btn btn-ghost" href="mailto:hello@breusoftware.com">Get in touch</a>
     </div>
   </section>
@@ -304,7 +337,7 @@ body[data-baselines]::after {
     <div class="feature">
       <p class="f-num">01</p>
       <h2 class="f-title">We publish our own games</h2>
-      <p class="f-copy">Breu Software is the publisher behind Farmer Bob’s Solitaire: we design it, build it, ship the updates and answer the mail. No outside publisher sits between the work and the people playing it.</p>
+      <p class="f-copy">Breu Software is the publisher behind Farmer Bob’s Solitaire and Space Barons: we design them, build them, ship the updates and answer the mail. No outside publisher sits between the work and the people playing it.</p>
     </div>
     <div class="feature">
       <p class="f-num">02</p>
@@ -318,32 +351,48 @@ body[data-baselines]::after {
     </div>
   </section>
 
-  <section class="split" id="game">
-    <div class="split-copy">
-      <span class="kicker">Farmer Bob’s Solitaire</span>
-      <h2 class="split-title">One hand at a time</h2>
-      <p class="note">A solitaire game with a farm around it: clear the table, work the seasons, and come back tomorrow to a board that has quietly moved on. No timers, no ads mid-hand, no pressure — just the next card.</p>
-      <div class="row" style="display:flex; gap:var(--space-3); flex-wrap:wrap; margin-top:var(--leading);">
-        <a class="btn btn-primary" href="mailto:hello@breusoftware.com?subject=Farmer%20Bob%E2%80%99s%20Solitaire">Ask about the game</a>
-      </div>
+  <section class="projects" id="projects">
+    <div class="projects-intro">
+      <span class="kicker">Upcoming projects</span>
+      <h2 class="projects-title">Two worlds in the works</h2>
+      <p class="projects-sub">Games built patiently, shared when they are ready, and supported after release.</p>
     </div>
-    <figure class="split-figure lighten">
-      <image-slot id="photo-split" shape="rect" role="img" aria-label="Screenshot of Farmer Bob’s Solitaire" placeholder="Drop a screenshot of Farmer Bob’s Solitaire here"></image-slot>
-    </figure>
+
+    <article class="project">
+      <figure class="project-art">
+        <img src="assets/farmer-bobs-medallion.png" alt="Farmer Bob’s Solitaire medallion" />
+      </figure>
+      <div class="project-copy">
+        <span class="project-status">Coming soon</span>
+        <h3 class="project-name">Farmer Bob’s Solitaire</h3>
+        <p class="project-description">A calm solitaire game with a working farm growing around every hand. Clear the table, follow the seasons, and return to a place that has quietly moved on while you were away. There are no mid-hand ads, timers, or pressure—only a thoughtful board and the next card.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <figure class="project-art">
+        <img src="assets/space-barons-rocket.png" alt="Space Barons rocket ship" />
+      </figure>
+      <div class="project-copy">
+        <span class="project-status">In development</span>
+        <h3 class="project-name">Space Barons</h3>
+        <p class="project-description">A persistent space strategy game about finding your place in a living galaxy. Explore connected sectors, build ships and industry, organize fleets, and decide which risks are worth taking beyond the next jump lane. Every command belongs to a larger world shared with other would-be barons.</p>
+      </div>
+    </article>
   </section>
 
   <hr class="rule" />
 
   <section class="close" id="contact">
     <h3>Get in touch</h3>
-    <p class="sub">Questions about the game, support, or business enquiries — write to us and we’ll answer.</p>
+    <p class="sub">Questions about our games, support, or business enquiries — write to us and we’ll answer.</p>
     <div class="signup">
       <a class="btn btn-primary" href="mailto:hello@breusoftware.com">hello@breusoftware.com</a>
     </div>
   </section>
 
   <footer>
-    <p style="margin:0;">Breu Software — publisher of Farmer Bob’s Solitaire.</p>
+    <p style="margin:0;">Breu Software — independent games, built and published in-house.</p>
     <p style="margin:0;">Imprint: Breu Software, [street address], [postal code, city], [country]. Contact: hello@breusoftware.com. Responsible for content: [name]. © 2026 Breu Software. <a href="#contact">Privacy</a></p>
   </footer>
 </div>
