@@ -497,6 +497,39 @@
       letter-spacing: 0.04em;
     }
 
+    .privacy-policy {
+      margin-top: 36px;
+      padding: clamp(28px, 4vw, 36px);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--bg);
+    }
+
+    .privacy-label {
+      margin: 0 0 14px;
+      color: var(--space);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .privacy-policy h3 {
+      max-width: 12ch;
+      margin: 0 0 14px;
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 710;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .privacy-text {
+      max-width: 51ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(16px, 1.4vw, 17px);
+    }
+
     .game-fishing .game-visual { order: 2; }
     .game-fishing .game-content { order: 1; }
 
@@ -755,6 +788,13 @@
               <li>Replayable deals</li>
               <li>Daily Deal</li>
             </ul>
+
+            <div class="privacy-policy" aria-labelledby="fbs-privacy-title">
+              <p class="privacy-label">Privacy Policy</p>
+              <h3 id="fbs-privacy-title">No data collection</h3>
+              <p class="privacy-text">Farmer Bob’s Solitaire operates entirely on your device. We do not collect, store, sell, or share any personal data. We do not use cookies, analytics, tracking pixels, or third-party services. Any save data is stored locally on your device and is not transmitted to us. We do not have access to your gameplay data, preferences, or any information you provide.</p>
+              <p class="privacy-text">Because no data is collected, there is nothing to access, disclose, or delete upon request. If you uninstall the game, all associated local data is removed with it.</p>
+            </div>
           </div>
         </article>
 
@@ -784,7 +824,7 @@
         <div class="studio-heading shell">
           <div>
             <p class="studio-index">Studio 02</p>
-            <h3 id="independent-title">Independent Studios</h3>
+            <h3 id="independent-title">Independent Studio</h3>
           </div>
           <p class="studio-description">A dedicated home for ambitious original worlds, deep systems, and games that grow through the choices of their players.</p>
         </div>
@@ -854,7 +894,7 @@
   <footer class="site-footer">
     <div class="footer-inner shell">
       <p class="footer-name">Breu Software LLC</p>
-      <p>Heritage Studio · Independent Studios</p>
+      <p>Heritage Studio · Independent Studio</p>
       <p>© 2026</p>
     </div>
   </footer>
