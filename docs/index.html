@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Breu Software LLC</title>
-  <meta name="description" content="Breu Software LLC is home to Heritage Studios and Independent Studios, creating Farmer Bob’s Solitaire, Fishing With Grandpa Duane, and Space Barons." />
+  <meta name="description" content="Breu Software LLC is home to Heritage Studio and Independent Studio, creating character-led games including Farmer Bob’s Solitaire and the persistent strategy game Space Barons." />
   <meta name="theme-color" content="#002b36" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Breu Software LLC" />
@@ -23,6 +23,8 @@
       --space-deep: #073642;
       --lake: #2aa198;
       --lake-deep: #073642;
+      --paint: #cb4b16;
+      --flight: #6c9fc2;
       --max: 1180px;
       --gutter: clamp(22px, 5vw, 72px);
     }
@@ -206,38 +208,11 @@
       isolation: isolate;
     }
 
-    .orbit {
-      position: absolute;
-      inset: 50% auto auto 50%;
-      width: min(39vw, 500px);
-      aspect-ratio: 1;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .orbit::before,
-    .orbit::after {
-      content: "";
-      position: absolute;
-      border: 1px solid var(--line);
-      border-radius: inherit;
-    }
-
-    .orbit::before { inset: 13%; }
-    .orbit::after { inset: 31%; background: rgba(38, 139, 210, 0.08); }
-
-    .orbit-axis {
-      position: absolute;
-      inset: 50% 0 auto;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--line), transparent);
-      transform: rotate(-19deg);
-    }
-
     .art-farm,
     .art-space,
-    .art-fishing {
+    .art-fishing,
+    .art-painting,
+    .art-flying {
       position: absolute;
       z-index: 2;
       margin: 0;
@@ -245,26 +220,46 @@
     }
 
     .art-farm {
-      width: min(26vw, 320px);
-      left: -2%;
-      top: 15%;
+      width: min(16vw, 200px);
+      left: 50%;
+      top: 0;
       z-index: 3;
-      transform: rotate(-4deg);
+      transform: translateX(-50%) rotate(-3deg);
     }
 
     .art-space {
-      width: min(9vw, 112px);
-      right: 6%;
-      bottom: 5%;
-      z-index: 4;
-      transform: rotate(9deg);
+      width: min(4vw, 52px);
+      left: 50%;
+      top: 50%;
+      z-index: 6;
+      transform: translate(-50%, -50%);
     }
 
     .art-fishing {
-      width: min(20vw, 242px);
-      top: 0;
-      right: -1%;
-      transform: rotate(5deg);
+      width: min(16vw, 200px);
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) rotate(3deg);
+    }
+
+    .art-painting,
+    .art-flying {
+      width: min(16vw, 200px);
+      clip-path: circle(49% at 50% 50%);
+    }
+
+    .art-painting {
+      left: 50%;
+      bottom: 0;
+      z-index: 5;
+      transform: translateX(-50%) rotate(3deg);
+    }
+
+    .art-flying {
+      left: 0;
+      top: 50%;
+      z-index: 4;
+      transform: translateY(-50%) rotate(-3deg);
     }
 
     .games {
@@ -375,6 +370,22 @@
         var(--lake-deep);
     }
 
+    .game-painting .game-visual {
+      background:
+        radial-gradient(circle at 50% 46%, rgba(203, 75, 22, 0.28), transparent 36%),
+        repeating-linear-gradient(0deg, rgba(147, 161, 161, 0.055) 0 1px, transparent 1px 42px),
+        var(--farm-deep);
+    }
+
+    .game-flying .game-visual {
+      background:
+        radial-gradient(circle at 50% 46%, rgba(108, 159, 194, 0.28), transparent 36%),
+        linear-gradient(rgba(147, 161, 161, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(147, 161, 161, 0.055) 1px, transparent 1px),
+        var(--lake-deep);
+      background-size: auto, 42px 42px, 42px 42px, auto;
+    }
+
     .game-visual::after {
       content: "";
       position: absolute;
@@ -399,9 +410,19 @@
       filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.42));
     }
 
+    .game-painting .game-visual img,
+    .game-flying .game-visual img {
+      width: min(78%, 470px);
+      border-radius: 50%;
+      filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.42));
+    }
+
     .game-fishing .game-visual::after {
       border-color: rgba(42, 161, 152, 0.28);
     }
+
+    .game-painting .game-visual::after { border-color: rgba(203, 75, 22, 0.28); }
+    .game-flying .game-visual::after { border-color: rgba(108, 159, 194, 0.28); }
 
     .game-fishing .game-number { color: rgba(238, 232, 213, 0.62); }
 
@@ -427,6 +448,8 @@
     .game-name { margin-bottom: 18px; }
     .game-farm .game-name { color: var(--farm); }
     .game-fishing .game-name { color: var(--lake); }
+    .game-painting .game-name { color: var(--paint); }
+    .game-flying .game-name { color: var(--flight); }
 
     .project-classification {
       display: flex;
@@ -461,6 +484,7 @@
 
     .classification-state dd { color: var(--space); }
     .classification-status dd { color: #859900; }
+    .classification-status.status-backlog dd { color: var(--paint); }
 
     .game-content h3 {
       max-width: 11ch;
@@ -530,8 +554,10 @@
       font-size: clamp(16px, 1.4vw, 17px);
     }
 
-    .game-fishing .game-visual { order: 2; }
-    .game-fishing .game-content { order: 1; }
+    .game-fishing .game-visual,
+    .game-flying .game-visual { order: 2; }
+    .game-fishing .game-content,
+    .game-flying .game-content { order: 1; }
 
     .principles {
       padding-block: clamp(88px, 11vw, 148px);
@@ -646,13 +672,16 @@
       }
 
       .hero-art { min-height: 520px; }
-      .orbit { width: min(72vw, 500px); }
-      .art-farm { width: min(52vw, 320px); left: 7%; top: 18%; }
-      .art-fishing { width: min(39vw, 238px); right: 5%; }
-      .art-space { width: min(18vw, 110px); right: 10%; }
+      .art-farm,
+      .art-fishing,
+      .art-painting,
+      .art-flying { width: min(29vw, 190px); }
+      .art-space { width: min(8vw, 52px); }
       .game { grid-template-columns: 1fr; }
       .game-fishing .game-visual,
-      .game-fishing .game-content { order: initial; }
+      .game-fishing .game-content,
+      .game-flying .game-visual,
+      .game-flying .game-content { order: initial; }
       .game-content { min-height: 480px; }
     }
 
@@ -663,8 +692,6 @@
       .hero { padding-block: 72px 88px; }
       h1 { font-size: clamp(54px, 17vw, 78px); }
       .hero-art { min-height: 420px; }
-      .art-farm { left: 1%; }
-      .art-fishing { right: 0; }
       .games-heading,
       .principles-heading,
       .studio-heading {
@@ -731,20 +758,25 @@
       <div>
         <p class="eyebrow">Breu Software LLC · Two game studios, One Vision</p>
         <h1 id="hero-title">We make games with somewhere to go.</h1>
-        <p class="hero-copy">Breu Software is home to two distinct studios. Heritage Studios creates Farmer Bob’s Solitaire and Fishing With Grandpa Duane. Independent Studios builds Space Barons. Different worlds, supported by one company.</p>
+        <p class="hero-copy">Breu Software is home to two distinct studios. Heritage Studio creates character-led games rooted in familiar pastimes and time spent together. Independent Studio builds Space Barons. Different worlds, supported by one company.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#studios">Meet the studios</a>
           <a class="button button-secondary" href="#principles">How we build</a>
         </div>
       </div>
 
-      <div class="hero-art" aria-label="A montage of artwork from Farmer Bob’s Solitaire, Space Barons, and Fishing With Grandpa Duane">
-        <div class="orbit" aria-hidden="true"><span class="orbit-axis"></span></div>
+      <div class="hero-art" aria-label="A montage of artwork from Breu Software games and planned game concepts">
         <figure class="art-farm">
           <img src="assets/farmer-bobs-medallion.png" alt="Farmer Bob’s Solitaire medallion" />
         </figure>
         <figure class="art-fishing">
           <img src="assets/fishing-with-duane-medallion-solarized.png" alt="Fishing With Grandpa Duane medallion" />
+        </figure>
+        <figure class="art-painting">
+          <img src="assets/painting-with-grandma-cindy-medallion.png" alt="Painting With Grandma Cindy medallion" />
+        </figure>
+        <figure class="art-flying">
+          <img src="assets/flying-with-grandpa-will-medallion.png" alt="Flying With Grandpa Will medallion" />
         </figure>
         <figure class="art-space">
           <img src="assets/space-barons-rocket.png" alt="Space Barons rocket ship" />
@@ -815,6 +847,48 @@
               <li>Fishing</li>
               <li>Character-led</li>
               <li>Spec in progress</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="game game-painting">
+          <div class="game-visual">
+            <p class="game-number">PROJECT 03</p>
+            <img src="assets/painting-with-grandma-cindy-medallion.png" alt="Painting With Grandma Cindy medallion" loading="lazy" />
+          </div>
+          <div class="game-content">
+            <p class="game-name">Painting With Grandma Cindy</p>
+            <dl class="project-classification" aria-label="Painting With Grandma Cindy classification">
+              <div class="classification-state"><dt>State</dt><dd>Creating Spec</dd></div>
+              <div class="classification-status status-backlog"><dt>Status</dt><dd>Backlog</dd></div>
+            </dl>
+            <h3>Every picture starts together.</h3>
+            <p class="game-description">Painting With Grandma Cindy is a planned Heritage Studio game about making art at your own pace. Follow guided paint-by-number pictures or open a blank canvas for free painting, with Grandma Cindy beside you to encourage experimentation, patience, and the simple joy of creating something by hand. The concept is in specification and is not in active development.</p>
+            <ul class="game-notes" aria-label="Painting With Grandma Cindy qualities">
+              <li>Paint by number</li>
+              <li>Free painting</li>
+              <li>Planned concept</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="game game-flying">
+          <div class="game-visual">
+            <p class="game-number">PROJECT 04</p>
+            <img src="assets/flying-with-grandpa-will-medallion.png" alt="Flying With Grandpa Will medallion" loading="lazy" />
+          </div>
+          <div class="game-content">
+            <p class="game-name">Flying With Grandpa Will</p>
+            <dl class="project-classification" aria-label="Flying With Grandpa Will classification">
+              <div class="classification-state"><dt>State</dt><dd>Creating Spec</dd></div>
+              <div class="classification-status status-backlog"><dt>Status</dt><dd>Backlog</dd></div>
+            </dl>
+            <h3>Take the controls together.</h3>
+            <p class="game-description">Flying With Grandpa Will is a planned Heritage Studio RC airplane and drone simulator built around learning the hobby together. Practice takeoffs, landings, and careful maneuvers across welcoming flying fields while Grandpa Will helps turn every flight, even the bumpy ones, into time well spent. The concept is in specification and is not in active development.</p>
+            <ul class="game-notes" aria-label="Flying With Grandpa Will qualities">
+              <li>RC flight simulation</li>
+              <li>Airplanes and drones</li>
+              <li>Planned concept</li>
             </ul>
           </div>
         </article>
