@@ -615,32 +615,6 @@
       padding-block: clamp(88px, 11vw, 148px);
     }
 
-    .contact-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: clamp(40px, 8vw, 80px);
-      align-items: end;
-    }
-
-    .contact-copy {
-      max-width: 48ch;
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(17px, 1.5vw, 19px);
-    }
-
-    .contact-email {
-      color: var(--ink);
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .contact-email:hover,
-    .contact-email:focus-visible {
-      color: var(--space);
-    }
-
     .site-footer {
       border-top: 1px solid var(--line);
     }
@@ -708,8 +682,6 @@
       .principle { min-height: 250px; }
       .principle-index { margin-bottom: 44px; }
 
-      .contact-inner { grid-template-columns: 1fr; }
-
       .footer-inner {
         min-height: 170px;
         align-items: flex-start;
@@ -746,7 +718,7 @@
       <div class="nav-links">
         <a href="#studios">Studios</a>
         <a href="#principles">Principles</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
@@ -950,17 +922,7 @@
           <p>A release is the start of stewardship. Our games are built to remain supported and worth returning to.</p>
         </article>
       </div>
-    </section>
-
-    <section class="contact shell" id="contact" aria-labelledby="contact-title">
-      <div class="contact-inner">
-        <div>
-          <p class="section-label">Get in touch</p>
-          <h2 id="contact-title">Let's talk.</h2>
-        </div>
-        <p class="contact-copy">Have a question, press request, or business inquiry? Send us a line at <a href="mailto:support@breusoftware.com" class="contact-email">support@breusoftware.com</a>.</p>
-      </div>
-    </section>
+     </section>
   </main>
 
   <footer class="site-footer">
