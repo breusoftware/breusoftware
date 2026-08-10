@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Breu Software LLC</title>
-  <meta name="description" content="Contact Breu Software LLC. Send support requests or business inquiries to support@breusoftware.com." />
+  <title>Privacy Policy — Breu Software LLC</title>
+  <meta name="description" content="Breu Software LLC Privacy Policy. We do not collect, store, sell, or share any personal data, including PCI information." />
   <meta name="theme-color" content="#002b36" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact — Breu Software LLC" />
-  <meta property="og:description" content="Send support requests or business inquiries to support@breusoftware.com." />
+  <meta property="og:title" content="Privacy Policy — Breu Software LLC" />
+  <meta property="og:description" content="Breu Software LLC Privacy Policy. We do not collect, store, sell, or share any personal data, including PCI information." />
   <style>
     :root {
       --bg: #002b36;
@@ -108,17 +108,12 @@
     .nav-links a:hover,
     .nav-links a:focus-visible { color: var(--ink); }
 
-    .contact-hero {
-      min-height: calc(100vh - 89px);
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      align-items: center;
-      gap: clamp(56px, 8vw, 120px);
-      padding-block: clamp(76px, 10vw, 148px);
+    .privacy-section {
+      padding-block: clamp(88px, 11vw, 148px);
     }
 
     .section-label {
-      margin: 0;
+      margin: 0 0 18px;
       color: var(--space);
       font-size: 12px;
       font-weight: 750;
@@ -135,56 +130,24 @@
       background: currentColor;
     }
 
-    h1 {
-      max-width: 12ch;
-      margin: 24px 0 26px;
-      font-size: clamp(58px, 8.2vw, 110px);
-      font-weight: 730;
-      letter-spacing: -0.062em;
-      line-height: 0.93;
+    .privacy-title {
+      max-width: 40ch;
+      margin: 0 0 34px;
+      font-size: clamp(42px, 6vw, 76px);
+      font-weight: 710;
+      letter-spacing: -0.05em;
+      line-height: 0.98;
     }
 
-    .contact-copy {
-      max-width: 52ch;
+    .privacy-body {
+      max-width: 66ch;
       margin: 0;
       color: var(--muted);
-      font-size: clamp(17px, 1.5vw, 20px);
+      font-size: clamp(17px, 1.5vw, 19px);
     }
 
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-
-    .contact-method {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .contact-method .label {
-      color: var(--space);
-      font-size: 12px;
-      font-weight: 750;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .contact-method .value {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .contact-method .value a {
-      color: var(--ink);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .contact-method .value a:hover,
-    .contact-method .value a:focus-visible {
-      color: var(--space);
+    .privacy-body p {
+      margin: 0 0 22px;
     }
 
     .site-footer {
@@ -219,9 +182,8 @@
     @media (max-width: 700px) {
       .nav { min-height: 76px; }
       .wordmark img { height: 36px; }
-      .contact-hero { padding-block: 72px 88px; }
-      h1 { font-size: clamp(54px, 17vw, 78px); }
-      .contact-details { gap: 24px; }
+      .privacy-section { padding-block: 72px 88px; }
+      .privacy-title { font-size: clamp(36px, 6vw, 56px); }
       .footer-inner {
         min-height: 170px;
         align-items: flex-start;
@@ -252,29 +214,28 @@
       <div class="nav-links">
         <a href="index.html#studios">Studios</a>
         <a href="index.html#principles">Principles</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html" class="active">Privacy</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <section class="contact-hero shell" aria-labelledby="contact-title">
+    <section class="privacy-section shell" aria-labelledby="privacy-title">
       <div>
-        <p class="section-label">Get in touch</p>
-        <h1 id="contact-title">Let's talk.</h1>
-        <p class="contact-copy">Have a question, press request, or business inquiry? Reach out to us using the contact details below.</p>
-      </div>
-
-      <div class="contact-details">
-        <div class="contact-method">
-          <span class="label">Company</span>
-          <span class="value">Breu Software LLC</span>
-        </div>
-        <div class="contact-method">
-          <span class="label">Support email</span>
-          <span class="value"><a href="mailto:support@breusoftware.com">support@breusoftware.com</a></span>
-        </div>
+        <p class="section-label">Legal</p>
+        <h1 id="privacy-title">Privacy Policy</h1>
+        <p class="privacy-body">
+          <p>Breu Software LLC ("we", "us", or "our") operates the Farmer Bob’s Solitaire, Fishing With Grandpa Duane, and Space Barons games (collectively, the "Games"). This Privacy Policy describes how we collect, use, and disclose your information when you use our Games.</p>
+          <p><strong>We do not collect any personal information from users of our Games.</strong> This includes, but is not limited to, personally identifiable information, usage data, cookies, analytics identifiers, or payment card information (PCI data). We do not collect, store, sell, share, or process any PCI (Payment Card Industry) information or personal data of any kind.</p>
+          <p><strong>Local-only gameplay.</strong> All game data, including save files, preferences, and progress, is stored entirely on your device. We do not have access to, do not collect, and do not transmit this data. We do not use cookies, tracking pixels, web beacons, or analytics tools.</p>
+          <p><strong>No third-party services.</strong> We do not integrate with any third-party services, advertisers, analytics providers, or data brokers. We do not serve targeted ads or track your behavior across other websites or applications.</p>
+          <p><strong>Data deletion.</strong> Since we do not collect or store any of your data, there is no data for us to delete upon request. If you delete or uninstall our Games, all associated local data is removed in accordance with your device's standard uninstall procedures.</p>
+          <p><strong>Children’s privacy.</strong> Our Games are not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13.</p>
+          <p><strong>Changes to this Privacy Policy.</strong> We may update our Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. Changes are effective immediately upon posting.</p>
+          <p><strong>Contact us.</strong> If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@breusoftware.com" style="color: var(--ink); text-decoration: underline; text-underline-offset: 3px;">support@breusoftware.com</a>.</p>
+          <p style="font-size: 13px; color: var(--muted);">Last Updated: August 10, 2026</p>
+        </p>
       </div>
     </section>
   </main>
