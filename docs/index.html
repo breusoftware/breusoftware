@@ -449,6 +449,29 @@
     .game-painting .game-name { color: var(--paint); }
     .game-flying .game-name { color: var(--flight); }
 
+    .app-store-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--space);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .app-store-link:hover,
+    .app-store-link:focus-visible { color: var(--ink); }
+
+    .app-store-link-label {
+      display: inline-block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
     .project-classification {
       display: flex;
       flex-wrap: wrap;
@@ -782,9 +805,13 @@
             <p class="game-name">Farmer Bob’s Solitaire</p>
             <dl class="project-classification" aria-label="Farmer Bob’s Solitaire classification">
               <div class="classification-state"><dt>State</dt><dd>Design Complete</dd></div>
-              <div class="classification-status"><dt>Status</dt><dd>Publishing</dd></div>
+              <div class="classification-status"><dt>Status</dt><dd>Published</dd></div>
             </dl>
             <h3>A card table with roots.</h3>
+            <p class="game-description">
+              <span class="app-store-link-label">Available on the App Store</span>
+              <a class="app-store-link" href="https://apps.apple.com/app/farmer-bobs-solitaire/id6798818966" target="_blank" rel="noopener">Download Farmer Bob’s Solitaire</a>
+            </p>
             <p class="game-description">Farmer Bob’s Solitaire is a handcrafted solitaire game played across four rows. Build each row by suit and rank, choose a fresh hand or the Daily Deal, and try to place all 52 cards before the deck runs dry. Drag or tap cards into place, replay favorite deals, and use Hint when you need a nudge.</p>
             <ul class="game-notes" aria-label="Farmer Bob’s Solitaire qualities">
               <li>Four-row solitaire</li>
